@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OBD Speedometer Privacy Policy</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<h1>OBD Speedometer Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> OBD Speedometer (<code>com.obdspeedometer</code>) &middot; <strong>Developer:</strong> [DEVELOPER NAME] &middot; <strong>Last updated:</strong> 2026-10-22</p>
+
+<p>OBD Speedometer connects to an ELM327 OBD-II Bluetooth adapter in your car, shows speed and other readings, looks up the posted speed limit for the road you are on, and can voice a warning when you go over it. It can record trips and, if you switch it on, keep a logbook of what each trip was for. It has no accounts, shows no ads and sells no data. Because the app uses your location, this page says exactly what leaves your phone and who receives it.</p>
+
+<h2>What stays on your device</h2>
+<p>Your trips (with GPS routes and readings), the logbook (driver names, car registration, places, trip purposes and reasons, odometer readings), your cars and their VINs, your adapters' Bluetooth addresses, your settings and the crash log are stored only in the app's private storage. The developer cannot see them. The app has no cloud upload of trips or the logbook. These files are excluded from Android cloud backup. A trip, logbook report or crash report leaves your phone only when you export or share it yourself (a folder you pick, &quot;Save as&quot;, or the share sheet). Deleting a trip in the app, or uninstalling the app, removes the stored data.</p>
+
+<h2>Where your position and other data are sent</h2>
+<p>Location is used while the app or its trip notification is active; the app does not ask for background location. It is never sent to the developer and never sent to Firebase. It is sent to these third parties so the features work:</p>
+<ul>
+<li><strong>Speed limits:</strong> while you drive with a GPS fix, the app sends your latitude and longitude (6 decimal places) to public Overpass servers that serve OpenStreetMap data: <code>overpass-api.de</code>, <code>overpass.kumi.systems</code> and <code>maps.mail.ru</code> (one of these is run in Russia). They are run by third parties and also see your IP address. This is not a Settings option; without location, the speed-limit sign stays blank.</li>
+<li><strong>Place names:</strong> the app asks Android's location-name service (Geocoder) for the country and road name. On most phones this service is provided by Google. The app does not control what that service sends.</li>
+<li><strong>Replay map:</strong> the map downloads tiles from OpenStreetMap, whose servers see the tiles requested (the area of the route you view) and your IP address. If the build you installed includes a Google Maps key, Replay can use Google Maps instead, and Google's terms apply to that.</li> <!-- OPEN: whether the release build carries a Google Maps key is unknown (sheet 2b.3); keep or remove the Google Maps sentence once confirmed. -->
+<li><strong>Vehicle lookup (off by default):</strong> only if you turn on the online VIN lookup in Settings, or tap &quot;Look up&quot; for a car, the app sends that car's VIN over HTTPS to the US National Highway Traffic Safety Administration vPIC service (<code>vpic.nhtsa.dot.gov</code>) to get make and model details. If you never turn it on or tap it, no VIN leaves your phone.</li> <!-- OPEN: whether to declare the VIN lookup in Play Data safety (Personal info > Other info) or treat it as a user-initiated transfer is undecided; the policy discloses it either way. -->
+</ul>
+<p>All of these addresses use HTTPS. The app talks to your OBD adapter over a local Bluetooth link.</p> <!-- OPEN: Play Data safety location answers (Precise and approximate location: Shared = Yes, optional vs required) are proposed but not confirmed by the owner; the wording here (sent to third parties, you can deny location) follows the proposal. -->
+
+<h2>Crash reports and anonymous usage (Firebase)</h2>
+<p>To fix crashes and see which features matter, the app uses Google Firebase Crashlytics and Firebase Analytics. Google acts as a service provider processing this data for us.</p> <!-- OPEN: Play Data safety "Shared: No" (Firebase as service provider) vs "Shared: Yes (analytics)" is undecided by the owner; wording here follows the sheet's proposal (not shared, provider only). -->
+<p>This is <strong>on by default</strong>. There is no question at first launch: collection starts when the app first opens, before you can reach the setting. You can turn it off at any time with the switch <em>Share crash reports and usage statistics</em> in Settings, which stops collection by both services. It is always off in debug builds.</p> <!-- OPEN: default-on with no first-run prompt (sheet open point 1). If the owner changes the app to ask first or default to off, this paragraph and the Play "optional" answer must be rewritten. -->
+<table>
+<tr><th>Data</th><th>Purpose</th></tr>
+<tr><td>Crash reports and error reports: the stack trace and, for handled problems, only where it happened and the kind of error (for example a reader timeout, a polling error, a failed Bluetooth disconnect, a failed speed-limit lookup)</td><td>Find and fix bugs</td></tr>
+<tr><td>App state attached to reports: which screen was open, build type, whether installed from Google Play, Android language, low-memory device, battery saver on, connection type (Wi-Fi, mobile, VPN or none; never the network name), Bluetooth transport type, coarse type of OBD chip (v1.x, v2.x, other, unknown), whether GPS was working and whether the foreground service was running</td><td>Reproduce crashes</td></tr>
+<tr><td>Usage events: an adapter connection attempt (classic or BLE, success or failure); the OBD protocol family found (for example CAN 11-bit, ISO 9141, KWP2000, J1850); a PID that the car does not support (the 2-digit code); which speed source was used (OBD, GPS or fused); whether a speed-limit lookup worked; which kind of speeding alert fired; whether demo mode was used</td><td>See what works and what fails</td></tr>
+<tr><td>Firebase's own automatic events (such as first open and sessions), device model and Android version, and identifiers Firebase creates for the install (an installation ID and an app-instance ID)</td><td>Standard analytics</td></tr>
+</table>
+<p>The app does not send your position, speed, VIN, the adapter's name or address, trips or logbook content to Firebase, and it does not use the advertising ID. Before an uncaught crash is reported, the app scrubs the error message of VIN-shaped text, Bluetooth addresses, IP addresses, coordinates with 3 or more decimals, URL query strings, content addresses, file paths and e-mail addresses. This scrub is pattern based, so it reduces but cannot guarantee the removal of every personal detail; stack frames and class names are sent as they are.</p>
+<p>Google may see your phone's IP address when the upload happens and may derive an approximate country or region from it. Data is sent over HTTPS. Retention is set by Google's defaults for Firebase. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+<h2>What we do not collect</h2>
+<p>We do not collect your trips, routes, logbook, VIN, adapter address, contacts, files, advertising ID, or any account or personal information. We do not sell data and do not use it for advertising.</p>
+
+<h2>Permissions</h2>
+<ul>
+<li>Location, precise and approximate: GPS speed, trip routes and speed-limit lookups, while the app is in use (including its trip notification). No background-location permission.</li>
+<li>Bluetooth scan and connect (and legacy Bluetooth on Android 11 and older): find and talk to your adapter. Scanning is declared as never used to find your location.</li>
+<li>Internet and network state: the lookups above, Firebase, and the connection type.</li>
+<li>Foreground service (connected device and location types) and wake lock: keep a trip and the adapter link alive with the screen off.</li>
+<li>Notifications: the trip notification, speeding alerts and logbook prompts.</li>
+<li>Display over other apps: optional, only draws the floating speed sign once you grant it in system settings.</li>
+</ul>
+<p>No contacts, SMS, call log, camera, microphone or storage access.</p>
+
+<h2>Your choices and deleting data</h2>
+<ul>
+<li>Turn <em>Share crash reports and usage statistics</em> off in Settings at any time.</li>
+<li>Leave the VIN lookup off (its default).</li>
+<li>Deny or revoke location permission: the app then works as an OBD speedometer only, with no GPS speed, no speed-limit lookups and no routes.</li>
+<li>Keep the logbook off (its default).</li>
+<li>Delete a trip in the app, or uninstall the app, to remove the data stored on your phone.</li>
+</ul>
+<p>We have no account system, so we cannot look up your data by name. To ask us to delete reports tied to your Firebase installation ID, email us that ID or a description of when a crash happened, and we will delete what we can match. We cannot delete data held by the map, speed-limit, geocoder or vehicle-lookup services named above; ask them directly.</p> <!-- OPEN: Play Data safety deletion answer ("Yes, by email") is proposed, not yet confirmed by the owner; this section must match the final answer. -->
+
+<h2>Children</h2>
+<p>OBD Speedometer is a driver's tool and is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this changes, the date above changes and the app update notes will say so.</p>
+
+<h2>Contact</h2>
+<p>sgateori@proton.me</p>
+</body>
+</html>
