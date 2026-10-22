@@ -9,7 +9,7 @@
 <body>
 
 <h1>OBD Speedometer Privacy Policy</h1>
-<p class="meta"><strong>App:</strong> OBD Speedometer (<code>com.obdspeedometer</code>) &middot; <strong>Developer:</strong> [DEVELOPER NAME] &middot; <strong>Last updated:</strong> 2026-10-22</p>
+<p class="meta"><strong>App:</strong> OBD Speedometer (<code>com.obdspeedometer</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-22</p>
 
 <p>OBD Speedometer connects to an ELM327 OBD-II Bluetooth adapter in your car, shows speed and other readings, looks up the posted speed limit for the road you are on, and can voice a warning when you go over it. It can record trips and, if you switch it on, keep a logbook of what each trip was for. It has no accounts, shows no ads and sells no data. Because the app uses your location, this page says exactly what leaves your phone and who receives it.</p>
 
@@ -21,15 +21,9 @@
 <ul>
 <li><strong>Speed limits:</strong> while you drive with a GPS fix, the app sends your latitude and longitude (6 decimal places) to public Overpass servers that serve OpenStreetMap data: <code>overpass-api.de</code>, <code>overpass.kumi.systems</code> and <code>maps.mail.ru</code> (one of these is run in Russia). They are run by third parties and also see your IP address. This is not a Settings option; without location, the speed-limit sign stays blank.</li>
 <li><strong>Place names:</strong> the app asks Android's location-name service (Geocoder) for the country and road name. On most phones this service is provided by Google. The app does not control what that service sends.</li>
-<li><strong>Replay map:</strong> the map downloads tiles from OpenStreetMap, whose servers see the tiles requested (the area of the route you view) and your IP address. If the build you installed includes a Google Maps key, Replay can use Google Maps instead, and Google's terms apply to that.</li> <!-- OPEN: whether the release build carries a Google Maps key is unknown (sheet 2b.3); keep or remove the Google Maps sentence once confirmed. -->
-<li><strong>Vehicle lookup (off by default):</strong> only if you turn on the online VIN lookup in Settings, or tap &quot;Look up&quot; for a car, the app sends that car's VIN over HTTPS to the US National Highway Traffic Safety Administration vPIC service (<code>vpic.nhtsa.dot.gov</code>) to get make and model details. If you never turn it on or tap it, no VIN leaves your phone.</li> <!-- OPEN: whether to declare the VIN lookup in Play Data safety (Personal info > Other info) or treat it as a user-initiated transfer is undecided; the policy discloses it either way. -->
-</ul>
-<p>All of these addresses use HTTPS. The app talks to your OBD adapter over a local Bluetooth link.</p> <!-- OPEN: Play Data safety location answers (Precise and approximate location: Shared = Yes, optional vs required) are proposed but not confirmed by the owner; the wording here (sent to third parties, you can deny location) follows the proposal. -->
-
-<h2>Crash reports and anonymous usage (Firebase)</h2>
-<p>To fix crashes and see which features matter, the app uses Google Firebase Crashlytics and Firebase Analytics. Google acts as a service provider processing this data for us.</p> <!-- OPEN: Play Data safety "Shared: No" (Firebase as service provider) vs "Shared: Yes (analytics)" is undecided by the owner; wording here follows the sheet's proposal (not shared, provider only). -->
-<p>This is <strong>on by default</strong>. There is no question at first launch: collection starts when the app first opens, before you can reach the setting. You can turn it off at any time with the switch <em>Share crash reports and usage statistics</em> in Settings, which stops collection by both services. It is always off in debug builds.</p> <!-- OPEN: default-on with no first-run prompt (sheet open point 1). If the owner changes the app to ask first or default to off, this paragraph and the Play "optional" answer must be rewritten. -->
-<table>
+<li><strong>Replay map:</strong> the map downloads tiles from OpenStreetMap, whose servers see the tiles requested (the area of the route you view) and your IP address. If the build you installed includes a Google Maps key, Replay can use Google Maps instead, and Google's terms apply to that.</li> <li><strong>Vehicle lookup (off by default):</strong> only if you turn on the online VIN lookup in Settings, or tap &quot;Look up&quot; for a car, the app sends that car's VIN over HTTPS to the US National Highway Traffic Safety Administration vPIC service (<code>vpic.nhtsa.dot.gov</code>) to get make and model details. If you never turn it on or tap it, no VIN leaves your phone.</li> </ul>
+<p>All of these addresses use HTTPS. The app talks to your OBD adapter over a local Bluetooth link.</p> <h2>Crash reports and anonymous usage (Firebase)</h2>
+<p>To fix crashes and see which features matter, the app uses Google Firebase Crashlytics and Firebase Analytics. Google acts as a service provider processing this data for us.</p> <p>This is <strong>on by default</strong>. There is no question at first launch: collection starts when the app first opens, before you can reach the setting. You can turn it off at any time with the switch <em>Share crash reports and usage statistics</em> in Settings, which stops collection by both services. It is always off in debug builds.</p> <table>
 <tr><th>Data</th><th>Purpose</th></tr>
 <tr><td>Crash reports and error reports: the stack trace and, for handled problems, only where it happened and the kind of error (for example a reader timeout, a polling error, a failed Bluetooth disconnect, a failed speed-limit lookup)</td><td>Find and fix bugs</td></tr>
 <tr><td>App state attached to reports: which screen was open, build type, whether installed from Google Play, Android language, low-memory device, battery saver on, connection type (Wi-Fi, mobile, VPN or none; never the network name), Bluetooth transport type, coarse type of OBD chip (v1.x, v2.x, other, unknown), whether GPS was working and whether the foreground service was running</td><td>Reproduce crashes</td></tr>
@@ -61,9 +55,7 @@
 <li>Keep the logbook off (its default).</li>
 <li>Delete a trip in the app, or uninstall the app, to remove the data stored on your phone.</li>
 </ul>
-<p>We have no account system, so we cannot look up your data by name. To ask us to delete reports tied to your Firebase installation ID, email us that ID or a description of when a crash happened, and we will delete what we can match. We cannot delete data held by the map, speed-limit, geocoder or vehicle-lookup services named above; ask them directly.</p> <!-- OPEN: Play Data safety deletion answer ("Yes, by email") is proposed, not yet confirmed by the owner; this section must match the final answer. -->
-
-<h2>Children</h2>
+<p>We have no account system, so we cannot look up your data by name. To ask us to delete reports tied to your Firebase installation ID, email us that ID or a description of when a crash happened, and we will delete what we can match. We cannot delete data held by the map, speed-limit, geocoder or vehicle-lookup services named above; ask them directly.</p> <h2>Children</h2>
 <p>OBD Speedometer is a driver's tool and is not directed at children.</p>
 
 <h2>Changes</h2>
